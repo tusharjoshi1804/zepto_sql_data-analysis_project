@@ -1,3 +1,5 @@
+
+
 ## 🛍️ Zepto Inventory Data Analysis using SQL
 
 This project focuses on analyzing **Zepto product data** using **SQL**. The data was meticulously cleaned, explored, and transformed into meaningful **business insights** to optimize inventory and sales strategy.
@@ -43,24 +45,13 @@ The dataset was sourced from **Kaggle** and was originally scraped from Zepto’
 
 ## 🔧 Project Workflow & Execution
 
-1. Database and table creation
+### 1️⃣ Database & Table Creation 
 
 A PostgreSQL table was created to host the inventory data, ensuring proper data types and constraints.
 
-```sql
-CREATE TABLE zepto (
-  sku_id SERIAL PRIMARY KEY,
-  category VARCHAR(120),
-  name VARCHAR(150) NOT NULL,
-  mrp NUMERIC(8,2),
-  discountPercent NUMERIC(5,2),
-  availableQuantity INTEGER,
-  discountedSellingPrice NUMERIC(8,2),
-  weightInGms INTEGER,
-  outOfStock BOOLEAN,
-  quantity INTEGER
+---
 
-2️. Data Import
+### 2️⃣ Data Import
 
 \copy zepto(category,name,mrp,discountPercent,availableQuantity,
             discountedSellingPrice,weightInGms,outOfStock,quantity)
@@ -71,7 +62,8 @@ WITH (FORMAT csv, HEADER true, DELIMITER ',', QUOTE '"', ENCODING 'UTF8');
 Encoding issues were solved by converting the CSV into UTF-8 format.
 
 ---
-3. Data Exploration (EDA)
+
+### 3️⃣ Data Exploration (EDA)
 
 The initial phase focused on understanding the dataset's scope and quality through standard exploratory checks:
 
@@ -82,7 +74,9 @@ The initial phase focused on understanding the dataset's scope and quality throu
 * **In-stock vs. Out-of-stock** product comparison
 * Analysis of **duplicate product names** corresponding to different SKUs
 
-4️. Data Cleaning and Transformation
+---
+
+### 4️⃣ Data Cleaning and Transformation
 
 | Issue Identified | Action Taken |
 | :--- | :--- |
@@ -90,7 +84,9 @@ The initial phase focused on understanding the dataset's scope and quality throu
 | **Prices stored in paise** | Both `mrp` and `discountedSellingPrice` were **converted to rupees** by dividing by 100. |
 | **Duplicate names** | These were **treated as multiple unique SKUs**, as they represented distinct product variants (e.g., different weights or sizes). |
 
-5️. Business Insights & SQL Query Results
+---
+
+### 5️⃣ Business Insights & SQL Query Results
 
 A series of targeted SQL queries were executed to extract actionable business intelligence:
 

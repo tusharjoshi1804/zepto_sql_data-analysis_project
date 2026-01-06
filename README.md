@@ -4,7 +4,6 @@
 
 This project focuses on analyzing **Zepto product data** using **SQL**. The data was meticulously cleaned, explored, and transformed into meaningful **business insights** to optimize inventory and sales strategy.
 
----
 
 ## 📌 Project Overview: Inventory Intelligence
 
@@ -15,7 +14,6 @@ The core objectives of this project were to:
 * Clean raw data to handle invalid or unreadable values.
 * Solve **business-driven SQL questions** focused on **discounts, revenue, inventory, and product performance**.
 
----
 
 ## 📦 Dataset Overview
 
@@ -41,7 +39,6 @@ The dataset was sourced from **Kaggle** and was originally scraped from Zepto’
 | `outOfStock` | Boolean flag (True/False) |
 | `quantity` | Package quantity (e.g., number of units in a pack) |
 
----
 
 ## 🔧 Project Workflow & Execution
 
@@ -49,7 +46,6 @@ The dataset was sourced from **Kaggle** and was originally scraped from Zepto’
 
 A PostgreSQL table was created to host the inventory data, ensuring proper data types and constraints.
 
----
 
 ### 2️⃣ Data Import
 
@@ -61,7 +57,6 @@ WITH (FORMAT csv, HEADER true, DELIMITER ',', QUOTE '"', ENCODING 'UTF8');
 
 Encoding issues were solved by converting the CSV into UTF-8 format.
 
----
 
 ### 3️⃣ Data Exploration (EDA)
 
@@ -74,7 +69,6 @@ The initial phase focused on understanding the dataset's scope and quality throu
 * **In-stock vs. Out-of-stock** product comparison
 * Analysis of **duplicate product names** corresponding to different SKUs
 
----
 
 ### 4️⃣ Data Cleaning and Transformation
 
@@ -84,7 +78,6 @@ The initial phase focused on understanding the dataset's scope and quality throu
 | **Prices stored in paise** | Both `mrp` and `discountedSellingPrice` were **converted to rupees** by dividing by 100. |
 | **Duplicate names** | These were **treated as multiple unique SKUs**, as they represented distinct product variants (e.g., different weights or sizes). |
 
----
 
 ### 5️⃣ Business Insights & SQL Query Results
 
